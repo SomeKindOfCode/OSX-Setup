@@ -3,7 +3,7 @@ OSX-Setup
 
 This is to freshly setup a new machine with **our personal** setup of apps.  
 Please check the list of apps and modify it to your needs!  
-If you modify: Don't forget to fork this repository and modify the following URL in the install process ;-)
+If you modify: Don't forget to fork this repository and modify the following URL in the install process
 
 Install
 -------
