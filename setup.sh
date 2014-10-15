@@ -72,6 +72,8 @@ apps=(
 	# Utilities
 	google-chrome
 	bittorrent-sync
+	caffeine
+	launchbar
 	 #carbon-copy-cloner
 	macdown
 	iterm2
