@@ -36,9 +36,8 @@ cecho() {
 #while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
-# Basic Setup Check
+# Basic Setup
 ###############################################################################
-
 
 # Homebrew
 # http://brew.sh
@@ -53,9 +52,65 @@ fi
 cecho "Updating Homebrew" $yellow
 #brew update
 
+# Homebrew Cask
+# http://caskroom.io
 if command brew cask 1>/dev/null; then 
 	cecho "Homebrew Cask already installed" $green
 else
 	cecho "Installing Homebrew Cask" $yellow
 	brew install caskroom/cask/brew-cask
 fi
+
+#############################
+# Install Apps
+#############################
+
+echo ""
+cecho "Now it's time for some Apps..." $yellow
+
+apps=(
+	# Utilities
+	google-chrome
+	bittorrent-sync
+	 #carbon-copy-cloner
+	macdown
+	iterm2
+	transmit
+	bartender
+	 #dropbox
+	skype
+	soundflower
+	# Dev Stuff
+	sourcetree
+	#coda
+	#Gaming
+	openemu
+	steam
+	obs # Open Broadcaster
+	# Graphic and Media
+	adobe-photoshop-lightroom
+	imagealpha
+	imageoptim
+	plex-media-server
+	handbrake
+	subler
+)
+
+echo ""
+cecho "Do you want to install the following apps?" $cyan
+
+for i in ${apps[@]}; do
+	cecho "> ${i}" $magenta
+done
+
+echo ""
+
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes ) 
+		cecho "Ok! installing apps..." $yellow
+		brew cask install --appdir="/Applications" ${apps[@]} 
+		break;;
+		No ) break;;
+	esac
+done
