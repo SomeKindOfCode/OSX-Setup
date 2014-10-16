@@ -244,7 +244,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo ""
 cecho "Do you want to disable the sleep image?" $cyan
-cecho "This will save disk space, but you wont be able to continue work if your battery dies and have to to a full reboot" $magenta
+cecho "This will save disk space, but you wont be able to continue work if your battery dies and have to do a full reboot" $magenta
 select yn in "Yes" "No"; do
   case $yn in
     Yes ) 
