@@ -96,6 +96,9 @@ apps=(
 	plex-media-server
 	handbrake
 	subler
+	vlc
+	# Recording
+	airserver
 )
 
 echo ""
